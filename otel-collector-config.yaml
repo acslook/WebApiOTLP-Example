@@ -1,0 +1,39 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: otel-collector:4317
+      http:
+        endpoint: otel-collector:4318
+
+exporters:  
+  debug:
+    verbosity: detailed
+  prometheus:
+    endpoint: "0.0.0.0:8889"
+    send_timestamps: true
+    metric_expiration: 180m
+    enable_open_metrics: true
+  logging:
+
+  otlp:
+    endpoint: jaeger:4317
+    tls:
+      insecure: true
+  otlphttp:
+    endpoint: http://grafana-loki:3100/otlp
+  
+  file:
+    path: /etc/output/logs.json
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [debug, logging, otlp]
+    metrics:
+      receivers: [otlp]
+      exporters: [debug, logging, prometheus]
+    logs:
+      receivers: [otlp]
+      exporters: [debug, logging, file, otlphttp]      
