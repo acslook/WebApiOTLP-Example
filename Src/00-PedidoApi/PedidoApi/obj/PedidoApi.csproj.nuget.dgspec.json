@@ -50,10 +50,6 @@
               "target": "Package",
               "version": "[35.5.1, )"
             },
-            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
-              "target": "Package",
-              "version": "[1.20.1, )"
-            },
             "OpenTelemetry.Exporter.Console": {
               "target": "Package",
               "version": "[1.9.0, )"
@@ -61,10 +57,6 @@
             "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
               "target": "Package",
               "version": "[1.9.0, )"
-            },
-            "OpenTelemetry.Exporter.Prometheus.AspNetCore": {
-              "target": "Package",
-              "version": "[1.5.0-rc.1, )"
             },
             "OpenTelemetry.Extensions.Hosting": {
               "target": "Package",
@@ -75,10 +67,6 @@
               "version": "[1.9.0, )"
             },
             "OpenTelemetry.Instrumentation.Http": {
-              "target": "Package",
-              "version": "[1.9.0, )"
-            },
-            "OpenTelemetry.Instrumentation.Runtime": {
               "target": "Package",
               "version": "[1.9.0, )"
             },
@@ -106,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -23,8 +23,8 @@ exporters:
   otlphttp:
     endpoint: http://grafana-loki:3100/otlp
   
-  file:
-    path: /etc/output/logs.json
+  # file:
+  #   path: /etc/output/logs.json
 
 service:
   pipelines:
@@ -36,4 +36,4 @@ service:
       exporters: [debug, logging, prometheus]
     logs:
       receivers: [otlp]
-      exporters: [debug, logging, file, otlphttp]      
+      exporters: [debug, logging, otlphttp]      

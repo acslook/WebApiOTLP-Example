@@ -7,10 +7,6 @@ using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Register the Instrumentation class as a singleton in the DI container.
-builder.Services.AddSingleton<Instrumentation>();
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -30,8 +26,7 @@ otel.ConfigureResource(resource => resource
 // Add Metrics for ASP.NET Core and our custom metrics and export to Prometheus
 otel.WithMetrics(metrics => metrics
     // Metrics provider from OpenTelemetry
-    .AddAspNetCoreInstrumentation()
-    .AddMeter("EstoqueApiMetrics")
+    .AddAspNetCoreInstrumentation()    
     .AddOtlpExporter(otlpOptions => 
     {
         otlpOptions.Endpoint = new Uri(tracingOtlpEndpoint);
@@ -57,39 +52,17 @@ otel.WithTracing(tracing =>
     }
 });
 
-// builder.Services.AddOpenTelemetry()
-//     // .UseOtlpExporter(OtlpExportProtocol.HttpProtobuf, new Uri("http://otel-collector:4318/"))
-//     .ConfigureResource(resource => resource.AddService(
-//         serviceName: serviceName,
-//         serviceVersion: serviceVersion))
-//     .WithTracing(tracing => tracing
-//         .AddOtlpExporter(options =>
-//             {
-//                 options.Endpoint = new Uri("http://otel-collector:4318");
-//                 options.Protocol = OtlpExportProtocol.HttpProtobuf;
-//             })
-//         .AddSource(serviceName)
-//         .AddAspNetCoreInstrumentation()
-//         .AddConsoleExporter())
-//     .WithMetrics(metrics => metrics
-//         .AddOtlpExporter(options =>
-//             {
-//                 options.Endpoint = new Uri("http://otel-collector:4318");
-//                 options.Protocol = OtlpExportProtocol.HttpProtobuf;
-//             })
-//         .AddMeter(serviceName)
-//         .AddAspNetCoreInstrumentation()
-//         .AddConsoleExporter());
-
-// builder.Logging.AddOpenTelemetry(options => options
-//     .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(
-//         serviceName: serviceName,
-//         serviceVersion: serviceVersion))
-//     .AddConsoleExporter());
+otel.WithLogging(logging => 
+{                    
+    logging.AddOtlpExporter((otlpOptions, processorOptions) =>
+    {        
+        otlpOptions.Endpoint = new Uri(tracingOtlpEndpoint);                
+        processorOptions.BatchExportProcessorOptions.ScheduledDelayMilliseconds = 2000;
+        processorOptions.BatchExportProcessorOptions.MaxExportBatchSize = 512;
+    });
+});
 
 var app = builder.Build();
-
-// app.MapPrometheusScrapingEndpoint();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

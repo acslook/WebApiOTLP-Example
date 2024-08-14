@@ -1,4 +1,3 @@
-using Bogus;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
 using System.Diagnostics;
@@ -13,12 +12,9 @@ namespace WebApiOTLP_Example.Controllers
     {
         private readonly ILogger<EstoqueController> _logger;        
 
-        private ActivitySource activitySource;
-
-        public EstoqueController(ILogger<EstoqueController> logger, Instrumentation instrumentation)
+        public EstoqueController(ILogger<EstoqueController> logger)
         {
-            this._logger = logger;
-            this.activitySource = instrumentation.ActivitySource;
+            this._logger = logger;            
         }     
 
         [HttpPost]
@@ -49,7 +45,7 @@ namespace WebApiOTLP_Example.Controllers
             var baseAddress = Environment.GetEnvironmentVariable("BASE_ADDRESS");
             var url = Environment.GetEnvironmentVariable("URL_POST");
 
-            _logger.LogInformation("Estoque separado para o pedido {pedidoId}", pedido.Id);
+            _logger.LogInformation($"Estoque separado para o pedido {pedido.Id}");
 
             if (baseAddress != null)
                 await client.PostAsync(baseAddress, url, JsonSerializer.Serialize(pedido));

@@ -9,10 +9,8 @@
       "PedidoApi/1.0.0": {
         "dependencies": {
           "Bogus": "35.5.1",
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.20.1",
           "OpenTelemetry.Exporter.Console": "1.9.0",
           "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.9.0",
-          "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.5.0-rc.1",
           "OpenTelemetry.Extensions.Hosting": "1.9.0",
           "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
           "OpenTelemetry.Instrumentation.Http": "1.9.0",
@@ -170,7 +168,6 @@
           }
         }
       },
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.20.1": {},
       "OpenTelemetry/1.9.0": {
         "dependencies": {
           "Microsoft.Extensions.Diagnostics.Abstractions": "8.0.0",
@@ -229,17 +226,6 @@
           "lib/net8.0/OpenTelemetry.Exporter.OpenTelemetryProtocol.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.9.0.1312"
-          }
-        }
-      },
-      "OpenTelemetry.Exporter.Prometheus.AspNetCore/1.5.0-rc.1": {
-        "dependencies": {
-          "OpenTelemetry": "1.9.0"
-        },
-        "runtime": {
-          "lib/net6.0/OpenTelemetry.Exporter.Prometheus.AspNetCore.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.5.0.895"
           }
         }
       },
@@ -474,13 +460,6 @@
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
     },
-    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.20.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-H4bIRdEOuyWBotgdPA5oCjJmUekWrtU5lOKnMAVaSNduZXHnqFZECsYbkm4vIOE4aeIO8TEYqfsZaJus1KknLQ==",
-      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.20.1",
-      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.20.1.nupkg.sha512"
-    },
     "OpenTelemetry/1.9.0": {
       "type": "package",
       "serviceable": true,
@@ -515,13 +494,6 @@
       "sha512": "sha512-qzFOP3V2eYIVbug3U4BJzzidHe9JhAJ42WZ/H8pUp/45Ry3MQQg/+e/ZieClJcxKnpbkXi7dUq1rpvuNp+yBYA==",
       "path": "opentelemetry.exporter.opentelemetryprotocol/1.9.0",
       "hashPath": "opentelemetry.exporter.opentelemetryprotocol.1.9.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Exporter.Prometheus.AspNetCore/1.5.0-rc.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-DnP6IyHSv7+Y3pYs7+8/wf77yjpfsw28N8wdbV68J1n+PZCfi+bf912qWye8/rsm+x0d2PySd+Iq8Pd4MSe1WA==",
-      "path": "opentelemetry.exporter.prometheus.aspnetcore/1.5.0-rc.1",
-      "hashPath": "opentelemetry.exporter.prometheus.aspnetcore.1.5.0-rc.1.nupkg.sha512"
     },
     "OpenTelemetry.Extensions.Hosting/1.9.0": {
       "type": "package",

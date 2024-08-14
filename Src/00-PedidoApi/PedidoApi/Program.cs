@@ -6,20 +6,9 @@ using OpenTelemetry.Logs;
 
 // This is required if the collector doesn't expose an https endpoint. By default, .NET
 // only allows http2 (required for gRPC) to secure endpoints.
-AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+// AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddSingleton<GeradorPedido>();
-
-// Add services to the container.
-// Register the Instrumentation class as a singleton in the DI container.
-builder.Services.AddSingleton<Instrumentation>();
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 // OTLP
 var tracingOtlpGrpcEndpoint = "http://otel-collector:4317";
@@ -31,14 +20,10 @@ otel.ConfigureResource(resource => resource
 
 // Add Metrics for ASP.NET Core and our custom metrics and export to Prometheus
 otel.WithMetrics(metrics => metrics
-    // Metrics provider from OpenTelemetry
-    .AddRuntimeInstrumentation()
+    // Metrics provider from OpenTelemetry    
     .AddHttpClientInstrumentation()
     .AddAspNetCoreInstrumentation()
     .AddMeter("PedidoApiMetrics")
-    // Metrics provides by ASP.NET Core in .NET 8
-    // .AddMeter("Microsoft.AspNetCore.Hosting")
-    // .AddMeter("Microsoft.AspNetCore.Server.Kestrel")
     
     .AddOtlpExporter(otlpOptions => 
     {
@@ -72,19 +57,22 @@ otel.WithLogging(logging =>
     {        
         otlpOptions.Endpoint = new Uri(tracingOtlpGrpcEndpoint);                
         processorOptions.BatchExportProcessorOptions.ScheduledDelayMilliseconds = 2000;
-        //processorOptions.BatchExportProcessorOptions.MaxExportBatchSize = 512;
+        processorOptions.BatchExportProcessorOptions.MaxExportBatchSize = 512;
     });
 });
 
+// Gen pedidos
+builder.Services.AddSingleton<GeradorPedido>();
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
-
-// Configure the HTTP request pipeline.
-if (true)//(app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthorization();
 

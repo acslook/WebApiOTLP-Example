@@ -1,4 +1,4 @@
-name: webapiteste-ngnix
+name: webapiotlp-example
 
 networks:
   proxy:
@@ -36,7 +36,7 @@ services:
     image: otel/opentelemetry-collector-contrib:latest
     command: ["--config=/etc/otel-collector-config.yaml"]
     volumes:
-      - ./output:/etc/output:rw
+      # - ./logs:/etc/output:rw      
       - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
     ports:
       - 1888:1888 # pprof extension

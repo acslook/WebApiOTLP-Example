@@ -1,4 +1,3 @@
-using Bogus;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
 using System.Diagnostics;
@@ -15,10 +14,9 @@ namespace WebApiOTLP_Example.Controllers
 
         private ActivitySource activitySource;
 
-        public NotaFiscalController(ILogger<NotaFiscalController> logger, Instrumentation instrumentation)
+        public NotaFiscalController(ILogger<NotaFiscalController> logger)
         {
-            this._logger = logger;
-            this.activitySource = instrumentation.ActivitySource;
+            this._logger = logger;            
         }     
 
         [HttpPost]
@@ -33,7 +31,7 @@ namespace WebApiOTLP_Example.Controllers
             var baseAddress = Environment.GetEnvironmentVariable("BASE_ADDRESS");
             var url = Environment.GetEnvironmentVariable("URL_POST");
 
-            _logger.LogInformation("Nota fiscal emitida para o pedido {pedidoId}", pedido.Id);
+            _logger.LogInformation($"Nota fiscal emitida para o pedido {pedido.Id}");
 
             if (baseAddress != null)
                 await client.PostAsync(baseAddress, url, JsonSerializer.Serialize(pedido));

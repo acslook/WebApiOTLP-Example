@@ -382,13 +382,6 @@
           }
         }
       },
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.20.1": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props": {},
-          "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets": {}
-        }
-      },
       "OpenTelemetry/1.9.0": {
         "type": "package",
         "dependencies": {
@@ -475,25 +468,6 @@
           }
         }
       },
-      "OpenTelemetry.Exporter.Prometheus.AspNetCore/1.5.0-rc.1": {
-        "type": "package",
-        "dependencies": {
-          "OpenTelemetry": "1.5.0-rc.1"
-        },
-        "compile": {
-          "lib/net6.0/OpenTelemetry.Exporter.Prometheus.AspNetCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/OpenTelemetry.Exporter.Prometheus.AspNetCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "OpenTelemetry.Extensions.Hosting/1.9.0": {
         "type": "package",
         "dependencies": {
@@ -544,22 +518,6 @@
         },
         "runtime": {
           "lib/net8.0/OpenTelemetry.Instrumentation.Http.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.Runtime/1.9.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenTelemetry.Api": "[1.9.0, 2.0.0)"
-        },
-        "compile": {
-          "lib/net6.0/OpenTelemetry.Instrumentation.Runtime.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/OpenTelemetry.Instrumentation.Runtime.dll": {
             "related": ".xml"
           }
         }
@@ -1520,86 +1478,6 @@
         "microsoft.openapi.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.20.1": {
-      "sha512": "H4bIRdEOuyWBotgdPA5oCjJmUekWrtU5lOKnMAVaSNduZXHnqFZECsYbkm4vIOE4aeIO8TEYqfsZaJus1KknLQ==",
-      "type": "package",
-      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.20.1",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "CHANGELOG.md",
-        "EULA.md",
-        "ThirdPartyNotices.txt",
-        "build/Container.props",
-        "build/Container.targets",
-        "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props",
-        "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets",
-        "build/Rules/GeneralBrowseObject.xaml",
-        "build/Rules/cs-CZ/GeneralBrowseObject.xaml",
-        "build/Rules/de-DE/GeneralBrowseObject.xaml",
-        "build/Rules/es-ES/GeneralBrowseObject.xaml",
-        "build/Rules/fr-FR/GeneralBrowseObject.xaml",
-        "build/Rules/it-IT/GeneralBrowseObject.xaml",
-        "build/Rules/ja-JP/GeneralBrowseObject.xaml",
-        "build/Rules/ko-KR/GeneralBrowseObject.xaml",
-        "build/Rules/pl-PL/GeneralBrowseObject.xaml",
-        "build/Rules/pt-BR/GeneralBrowseObject.xaml",
-        "build/Rules/ru-RU/GeneralBrowseObject.xaml",
-        "build/Rules/tr-TR/GeneralBrowseObject.xaml",
-        "build/Rules/zh-CN/GeneralBrowseObject.xaml",
-        "build/Rules/zh-TW/GeneralBrowseObject.xaml",
-        "build/ToolsTarget.props",
-        "build/ToolsTarget.targets",
-        "icon.png",
-        "microsoft.visualstudio.azure.containers.tools.targets.1.20.1.nupkg.sha512",
-        "microsoft.visualstudio.azure.containers.tools.targets.nuspec",
-        "tools/Microsoft.VisualStudio.Containers.Tools.Common.dll",
-        "tools/Microsoft.VisualStudio.Containers.Tools.Shared.dll",
-        "tools/Microsoft.VisualStudio.Containers.Tools.Tasks.dll",
-        "tools/Newtonsoft.Json.dll",
-        "tools/System.Security.Principal.Windows.dll",
-        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/de/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/de/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/de/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/es/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/es/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/es/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/it/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/it/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/it/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll"
-      ]
-    },
     "OpenTelemetry/1.9.0": {
       "sha512": "7scS6BUhwYeSXEDGhCxMSezmvyCoDU5kFQbmfyW9iVvVTcWhec+1KIN33/LOCdBXRkzt2y7+g03mkdAB0XZ9Fw==",
       "type": "package",
@@ -1714,20 +1592,6 @@
         "opentelemetry.exporter.opentelemetryprotocol.nuspec"
       ]
     },
-    "OpenTelemetry.Exporter.Prometheus.AspNetCore/1.5.0-rc.1": {
-      "sha512": "DnP6IyHSv7+Y3pYs7+8/wf77yjpfsw28N8wdbV68J1n+PZCfi+bf912qWye8/rsm+x0d2PySd+Iq8Pd4MSe1WA==",
-      "type": "package",
-      "path": "opentelemetry.exporter.prometheus.aspnetcore/1.5.0-rc.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net6.0/OpenTelemetry.Exporter.Prometheus.AspNetCore.dll",
-        "lib/net6.0/OpenTelemetry.Exporter.Prometheus.AspNetCore.xml",
-        "opentelemetry-icon-color.png",
-        "opentelemetry.exporter.prometheus.aspnetcore.1.5.0-rc.1.nupkg.sha512",
-        "opentelemetry.exporter.prometheus.aspnetcore.nuspec"
-      ]
-    },
     "OpenTelemetry.Extensions.Hosting/1.9.0": {
       "sha512": "QBQPrKDVCXxTBE+r8tgjmFNKKHi4sKyczmip2XGUcjy8kk3quUNhttnjiMqC4sU50Hemmn4i5752Co26pnKe3A==",
       "type": "package",
@@ -1788,24 +1652,6 @@
         "opentelemetry-icon-color.png",
         "opentelemetry.instrumentation.http.1.9.0.nupkg.sha512",
         "opentelemetry.instrumentation.http.nuspec"
-      ]
-    },
-    "OpenTelemetry.Instrumentation.Runtime/1.9.0": {
-      "sha512": "6raJb9Pvi1CaBB59SX86Mr9NQiQbiv9ialO+cQKFRGCq3Bl2WC8cTTcbfGtaRX0quqWnZC/dK7xrXuOuYcwANA==",
-      "type": "package",
-      "path": "opentelemetry.instrumentation.runtime/1.9.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net462/OpenTelemetry.Instrumentation.Runtime.dll",
-        "lib/net462/OpenTelemetry.Instrumentation.Runtime.xml",
-        "lib/net6.0/OpenTelemetry.Instrumentation.Runtime.dll",
-        "lib/net6.0/OpenTelemetry.Instrumentation.Runtime.xml",
-        "lib/netstandard2.0/OpenTelemetry.Instrumentation.Runtime.dll",
-        "lib/netstandard2.0/OpenTelemetry.Instrumentation.Runtime.xml",
-        "opentelemetry-icon-color.png",
-        "opentelemetry.instrumentation.runtime.1.9.0.nupkg.sha512",
-        "opentelemetry.instrumentation.runtime.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore/6.4.0": {
@@ -1943,14 +1789,11 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Bogus >= 35.5.1",
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.20.1",
       "OpenTelemetry.Exporter.Console >= 1.9.0",
       "OpenTelemetry.Exporter.OpenTelemetryProtocol >= 1.9.0",
-      "OpenTelemetry.Exporter.Prometheus.AspNetCore >= 1.5.0-rc.1",
       "OpenTelemetry.Extensions.Hosting >= 1.9.0",
       "OpenTelemetry.Instrumentation.AspNetCore >= 1.9.0",
       "OpenTelemetry.Instrumentation.Http >= 1.9.0",
-      "OpenTelemetry.Instrumentation.Runtime >= 1.9.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -2003,10 +1846,6 @@
             "target": "Package",
             "version": "[35.5.1, )"
           },
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
-            "target": "Package",
-            "version": "[1.20.1, )"
-          },
           "OpenTelemetry.Exporter.Console": {
             "target": "Package",
             "version": "[1.9.0, )"
@@ -2014,10 +1853,6 @@
           "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
             "target": "Package",
             "version": "[1.9.0, )"
-          },
-          "OpenTelemetry.Exporter.Prometheus.AspNetCore": {
-            "target": "Package",
-            "version": "[1.5.0-rc.1, )"
           },
           "OpenTelemetry.Extensions.Hosting": {
             "target": "Package",
@@ -2028,10 +1863,6 @@
             "version": "[1.9.0, )"
           },
           "OpenTelemetry.Instrumentation.Http": {
-            "target": "Package",
-            "version": "[1.9.0, )"
-          },
-          "OpenTelemetry.Instrumentation.Runtime": {
             "target": "Package",
             "version": "[1.9.0, )"
           },
@@ -2059,7 +1890,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
